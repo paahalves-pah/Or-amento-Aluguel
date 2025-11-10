@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento de Aluguel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Orçamento de Aluguel</h1>
+        <form id="formulario">
+            <label for="tipoImovel">Tipo de imóvel:</label>
+            <select id="tipoImovel" required>
+                <option value="casa">Casa</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="kitnet">Kitnet</option>
+            </select>
+
+            <label for="quartos">Número de quartos:</label>
+            <input type="number" id="quartos" min="1" required>
+
+            <label for="garagem">Possui garagem?</label>
+            <select id="garagem" required>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+
+            <label for="vagas">Número de vagas:</label>
+            <input type="number" id="vagas" min="0" required>
+
+            <label for="semFilhos">Sem filhos?</label>
+            <select id="semFilhos" required>
+                <option value="nao">Não</option>
+                <option value="sim">Sim</option>
+            </select>
+
+            <label for="parcelas">Parcelar contrato em até 5x:</label>
+            <input type="number" id="parcelas" min="1" max="5" required>
+
+            <button type="button" onclick="calcular()">Calcular</button>
+            <button type="button" onclick="limpar()">Limpar</button>
+        </form>
+
+        <div id="resultado"></div>
+        <button id="baixarCSV" onclick="gerarCSV()">Baixar CSV (12 meses)</button>
+    </div>
+
+    <footer>
+        <p>Desenvolvido por Paloma Alves</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
